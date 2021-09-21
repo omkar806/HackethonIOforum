@@ -4,5 +4,6 @@ import pyrebase
 # Create your views here.
 
 
-def index (requests):
-    return HttpResponse("This is my webpage")
+def index (request):
+    return render (request , "index.html ")
+

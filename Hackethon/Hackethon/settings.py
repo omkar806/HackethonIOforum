@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+SECRET_KEY = 'django-insecure-2kgl)$7m+1s=w-f4wt74!k*ntbs4&npm_1eq7_@2fip-p6e*i3'
 # Application definition
 
 INSTALLED_APPS = [
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Hackethon.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR /"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,5 +121,11 @@ STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+#Added manually
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+    
+]
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
