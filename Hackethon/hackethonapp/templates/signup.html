@@ -31,7 +31,7 @@
         position: relative;
         margin: 5% auto;
         width: 600px;
-        height: 400px;
+        height: 500px;
         background: #FFF;
         border-radius: 2px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -54,6 +54,7 @@
     }
     
     input[type="text"],
+    input[type="number"],
     input[type="password"] {
         display: block;
         box-sizing: border-box;
@@ -70,6 +71,7 @@
     }
     
     input[type="text"]:focus,
+    input[type="number"]:focus,
     input[type="password"]:focus {
         border-bottom: 2px solid #16a085;
         color: #16a085;
@@ -180,15 +182,26 @@
     <div id="login-box">
         <div class="left">
             <h1>Sign up</h1>
+            <form action="/postsignup/" method="POST">
+                <!-- <input type="text" name="username" placeholder="Username" /> -->
+                <input type="text" name="email" placeholder="E-mail" />
+                <input type="number" name="rollno" placeholder="Roll Number" />
+                <input type="text" list="divisions" id="division" name="division" placeholder="Division" />
+                <datalist name="division" id="divisions">
+                    
+                    <option value="A">
+                    <option value="B">
+                    <option value="C">
+                  
+                  </datalist>
+                <input type="number" name="prnno" placeholder="PRN Number" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="password" name="password2" placeholder="Retype password" />
 
-            <input type="text" name="username" placeholder="Username" />
-            <input type="text" name="email" placeholder="E-mail" />
-            <input type="password" name="password" placeholder="Password" />
-            <input type="password" name="password2" placeholder="Retype password" />
 
-            <input type="submit" name="signup_submit" value="Sign me up" />
+                <input type="submit" name="signup_submit" value="Sign me up" />
         </div>
-
+        </form>
         <div class="right">
             <span class="loginwith">Sign in with<br />social network</span>
 
